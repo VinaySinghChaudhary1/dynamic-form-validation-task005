@@ -1,4 +1,1 @@
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Form submitted successfully!');
-});
+document.addEventListener('DOMContentLoaded', function() { const emailInput = document.querySelector('#input-email'); const emailError = document.querySelector('#email-error'); const submissionSuccess = document.querySelector('#submission-success'); const form = document.querySelector('#contact-form'); emailInput.addEventListener('input', function() { if (!emailInput.value.includes('@')) { emailError.style.display = 'block'; } else { emailError.style.display = 'none'; } }); form.addEventListener('submit', function(event) { event.preventDefault(); if (emailInput.value.includes('@') && document.querySelector('#input-message').value.trim() !== '') { form.style.display = 'none'; submissionSuccess.style.display = 'block'; } }); });
